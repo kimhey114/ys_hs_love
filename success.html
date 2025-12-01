@@ -40,7 +40,17 @@ body::before {
     .card {
       max-width: 420px;
       width: 100%;
-      background: rgba(255, 255, 255, 0.93);
+     .card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.25),
+    transparent
+  );
+  pointer-events: none;
+}
       border-radius: 24px;
       padding: 28px 22px 22px;
       text-align: center;
@@ -221,10 +231,10 @@ body::before {
 
     <div class="button-row">
       <button class="btn-primary" type="button" onclick="goMain()">
-        나가기
+        입장하기
       </button>
       <button class="btn-ghost" type="button" onclick="openLink()">
-        입장하기
+        나가기
       </button>
     </div>
 
@@ -236,12 +246,13 @@ body::before {
   <script>
     function goMain() {
       // 비밀번호 페이지로 다시 돌아가기
-      window.location.href = "index.html";
+      window.open("https://www.youtube.com/@hacsmu", "_blank");
+    
     }
 
     function openLink() {
       // 여기 원하는 외부 링크나 다른 페이지 넣기
-      window.open("https://www.youtube.com/@hacsmu", "_blank");
+      window.location.href = "index.html";
     }
   </script>
 </body>
