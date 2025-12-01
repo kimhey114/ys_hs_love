@@ -109,19 +109,19 @@
 <body>
   <div class="container">
     <div class="label">Private Access</div>
-    <div class="title">비밀 파티 입장</div>
-    <div class="subtitle">초대받은 사람만 들어갈 수 있는 작은 공간이에요.</div>
+    <div class="title">1000일 축하</div>
+    <div class="subtitle">우리만의 작은 공간이에요.</div>
 
     <div class="input-wrap">
       <input type="password" id="password" placeholder="비밀번호를 입력하세요" />
       <button type="button" onclick="checkPassword()">Enter</button>
     </div>
 
-    <div class="hint">비밀번호가 기억나지 않으면 초대한 사람에게 물어봐 주세요.</div>
+    <div class="hint">비밀번호는 우리양!</div>
   </div>
 
   <script>
-    const CORRECT_PASSWORD = "party2025"; // 여기만 바꾸면 비밀번호 변경
+    const CORRECT_PASSWORD = "0228"; // 여기만 바꾸면 비밀번호 변경
 
     function checkPassword() {
       const input = document.getElementById("password").value.trim();
@@ -134,7 +134,7 @@
       if (input === CORRECT_PASSWORD) {
         window.location.href = "success.html"; // 성공 페이지 파일 이름
       } else {
-        alert("비밀번호가 올바르지 않습니다.");
+        alert("비밀번호 다시!");
       }
     }
   </script>
