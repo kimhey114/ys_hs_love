@@ -12,17 +12,30 @@
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
-    body {
-      min-height: 100vh;
-      background: radial-gradient(circle at top, #ffd166, #ff6f91, #845ef7);
-      color: #1f1f24;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      overflow: hidden;
-      position: relative;
-    }
+
+     body {
+  min-height: 100vh;
+  background: url("bg.jpg") center/cover no-repeat fixed;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 사진 위에 색감 살짝 입히기(어둡게/로맨틱하게) */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0,0,0,0.35),
+    rgba(0,0,0,0.45)
+  );
+  z-index: 0;
+}
 
     .card {
       max-width: 420px;
@@ -157,9 +170,32 @@
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-6px); }
     }
+    /* Firework pulse */
+.firework {
+  position: absolute;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 0 rgba(255,255,255,.8),
+    0 0 0 10px rgba(255,105,180,.6),
+    0 0 0 20px rgba(0,200,255,.4);
+  animation: boom 1.8s infinite ease-out;
+}
+.firework.f2 { left: 30%; top: 20%; animation-delay: .4s;}
+.firework.f3 { left: 70%; top: 30%; animation-delay: .8s;}
+.firework.f4 { left: 50%; top: 70%; animation-delay: 1.2s;}
+@keyframes boom {
+  0% { transform: scale(0); opacity: 1; }
+  60% { transform: scale(1.6); opacity: .7; }
+  100% { transform: scale(2.3); opacity: 0; }
+}
   </style>
 </head>
 <body>
+  <div class="firework"></div>
+<div class="firework f2"></div>
+<div class="firework f3"></div>
+<div class="firework f4"></div>
   <!-- Confetti elements -->
   <div class="confetti"></div>
   <div class="confetti"></div>
